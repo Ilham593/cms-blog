@@ -1,4 +1,4 @@
-# ilham's Blog CMS
+# Ilham's Blog CMS
 
 A fullstack Blog CMS built with **MERN stack** (MongoDB, Express, React, Node.js).  
 It allows admin to manage blog content through a secure dashboard, while visitors can read and share articles on a clean, responsive frontend.
@@ -10,7 +10,6 @@ It allows admin to manage blog content through a secure dashboard, while visitor
 - **Database**: MongoDB
 - **Auth**: JWT (admin only)
 - **Deployment**: Vercel (Frontend) & Railway / Render (Backend)
-
 
 ## 🔐 Admin Features
 - Login with JWT
@@ -29,4 +28,13 @@ It allows admin to manage blog content through a secure dashboard, while visitor
 project-root/
 │
 ├── client/      # React frontend
-└── server/      # Express backend'
+│   ├── src/
+│   ├── public/
+│   └── ...
+│
+└── server/      # Express backend
+    ├── routes/
+    ├── controllers/
+    ├── models/
+    ├── middleware/
+    └── ...
