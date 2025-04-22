@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import router from "./routes/postRoute.js";
+import authRuote from "./routes/auth.js";
 // load environment variables from .env file
 dotenv.config();
 
@@ -31,7 +32,7 @@ connectDB();
 
 // routes 
 app.use("/api/posts", router);
-// app.use("/api/auth", router);
+app.use("/api/auth", authRuote);
 // test route
 
 
