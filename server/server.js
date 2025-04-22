@@ -29,12 +29,10 @@ connectDB();
 
 
 
-// route
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
-
+// routes 
 app.use("/api/posts", router);
+// app.use("/api/auth", router);
+// test route
 
 
 // start server
