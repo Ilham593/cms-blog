@@ -1,12 +1,11 @@
 import express from "express";
 import Post from "../models/Post.js";
 import mongoose from "mongoose";
-import { MongoGCPError } from "mongodb";
-
+import authMiddleware from "../middleware/authMiddleware.js";
 const router = express.Router();
 
 // creat a new post
-router.post("/", async (req, res) => {
+router.post("/", authMiddleware, async (req, res) => {
   const { title, content, author } = req.body;
   try {
     const newPost = new Post({
@@ -33,7 +32,7 @@ router.post("/", async (req, res) => {
 
 // get all posts
 
-router.get("/", async (req, res) => {
+router.get("/", authMiddleware, async (req, res) => {
   try {
     const posts = await Post.find();
 
@@ -46,7 +45,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", authMiddleware, async (req, res) => {
   const { id } = req.params;
   try {
     const post = await Post.findById(id);
@@ -60,7 +59,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // update a post
-router.put("/:id", async (req, res) => {
+router.put("/:id", authMiddleware, async (req, res) => {
   const { id } = req.params;
   const { title, content, author } = req.body;
 
@@ -91,7 +90,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // delete a post
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", authMiddleware, async (req, res) => {
   const { id } = req.params;
 
   // validate the id
