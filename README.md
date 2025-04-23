@@ -5,7 +5,7 @@ It allows admin to manage blog content through a secure dashboard, while visitor
 
 ## Tech Stack
 
-- **Frontend**: React.js, React Router, Tailwind CSS (optional)
+- **Frontend**: React.js, React Router, Tailwind CSS 
 - **Backend**: Express.js, Node.js
 - **Database**: MongoDB
 - **Auth**: JWT (admin only)
